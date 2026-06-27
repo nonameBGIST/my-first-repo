@@ -55,9 +55,63 @@ nav a {
     transition: color 0.2s ease;
 }
 
+nav a:hover {
+    color: var(--color-accent);
+}
+
 nav a.active {
     text-decoration: underline;
     color: var(--color-accent);
+}
+
+.extra-info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.extra-info p {
+    padding-top: 10px;
+    color: #555;
+}
+
+.extra-info.expanded {
+    max-height: 500px;
+}
+
+#toggle-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#toggle-btn:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+form button:hover {
+    background-color: var(--color-accent);
+}
+
+form button:active {
+    transform: scale(0.97);
 }
 
 .projects-grid {
@@ -71,6 +125,33 @@ nav a.active {
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.projects-grid article:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.projects-grid article:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.projects-grid article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .burger {
@@ -86,21 +167,19 @@ nav a.active {
     .burger {
         display: block;
     }
-    
     nav {
-        display: none; 
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%; 
+        top: 100%;
         right: 0;
         background: var(--color-primary);
         width: 100%;
         padding: 1rem;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    
     nav.open {
-        display: flex; 
+        display: flex;
     }
 }
 
@@ -125,16 +204,6 @@ form input, form textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-}
-
-form button {
-    margin-top: 15px;
-    padding: 10px 15px;
-    background: var(--color-primary);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
 footer {
