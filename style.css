@@ -1,36 +1,123 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* Этап 1. Базовые стили и сброс */
+* {
     margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
+    padding: 0;
+    box-sizing: border-box;
 }
-header, main, footer {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+
+:root {
+    --color-primary: #2e5395;
+    --color-accent: #f2a154;
+    --color-bg-light: #eaf1fb;
 }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #fafafa;
+}
+
+/* Дополнительные отступы для контента */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+/* Этап 2. Flexbox для навигации */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
 nav a {
-    margin-right: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
+
+/* Этап 4. Подсветка активного пункта меню через JS */
+nav a.active {
+    text-decoration: underline;
+    color: var(--color-accent);
+}
+
+/* Этап 3. Flexbox для карточек проектов */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.projects-grid article {
+    flex: 1 1 280px;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Стили формы для опрятного внешнего вида */
+form {
+    max-width: 500px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
 form label {
     display: block;
     margin-top: 10px;
+    font-weight: 500;
 }
+
 form input, form textarea {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     box-sizing: border-box;
 }
+
 form button {
     margin-top: 15px;
     padding: 10px 15px;
-    background: #007acc;
+    background: var(--color-primary);
     color: #fff;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+}
+
+form button:hover {
+    opacity: 0.9;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #eaeaea;
+    margin-top: 2rem;
 }
