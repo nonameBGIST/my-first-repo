@@ -33,7 +33,6 @@ h2 {
     color: var(--color-primary);
 }
 
-/* Шапка */
 header {
     display: flex;
     justify-content: space-between;
@@ -80,7 +79,6 @@ nav a.active {
     color: var(--color-accent);
 }
 
-/* Раскрывающийся блок */
 .extra-info {
     max-height: 0;
     overflow: hidden;
@@ -106,7 +104,6 @@ nav a.active {
     cursor: pointer;
 }
 
-/* --- ПР №7: Стили для кнопок-фильтров и инпута поиска --- */
 .projects-controls {
     display: flex;
     flex-wrap: wrap;
@@ -157,7 +154,6 @@ nav a.active {
     border-color: var(--color-primary);
 }
 
-/* Сетка Grid и карточки проектов */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -183,7 +179,6 @@ nav a.active {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Оформление формы */
 form {
     max-width: 500px;
     background: white;
@@ -226,7 +221,6 @@ form button {
     margin-top: 2px;
 }
 
-/* Тёмная тема */
 body.dark-theme {
     background-color: #1a1a1a;
     color: #eaeaea;
@@ -258,7 +252,6 @@ body.dark-theme form textarea {
 
 body.dark-theme .extra-info p { color: #bbb; }
 
-/* Адаптивность */
 .burger {
     display: none;
     font-size: 1.8rem;

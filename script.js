@@ -1,4 +1,4 @@
-// --- ПР №7: Этап 1. Описание данных проектов в массиве (минимум 5) ---
+
 const projects = [
     { id: 1, title: "Сайт-визитка кофейни", category: "frontend", description: "Адаптивный современный одностраничник на Flexbox с формой обратной связи." },
     { id: 2, title: "Бот-помощник для Telegram", category: "backend", description: "Интеллектуальный бэкенд-скрипт на Python с автоматической обработкой заказов." },
@@ -7,7 +7,6 @@ const projects = [
     { id: 5, title: "RESTful API для интернет-магазина", category: "backend", description: "Проектирование и разработка архитектуры серверной базы данных на Node.js." }
 ];
 
-// --- ПР №7: Этап 2. Функции генерации карточек ---
 function createCard(project) {
     return `
         <article class="project-card" data-category="${project.category}">
@@ -22,10 +21,8 @@ function renderProjects(list) {
     container.innerHTML = list.map(createCard).join("");
 }
 
-// Первичный запуск отрисовки всех проектов
 renderProjects(projects);
 
-// --- ПР №7: Этап 3. Фильтры по категориям ---
 const filterButtons = document.querySelectorAll(".filters button");
 filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -41,7 +38,6 @@ filterButtons.forEach(btn => {
     });
 });
 
-// --- ПР №7: Этап 4. Поиск по названию ---
 const searchInput = document.getElementById("search-input");
 searchInput.addEventListener("input", () => {
     const query = searchInput.value.trim().toLowerCase();
@@ -51,15 +47,12 @@ searchInput.addEventListener("input", () => {
     renderProjects(filtered);
 });
 
-// --- ЛОГИКА ИЗ ПРОШЛЫХ РАБОТ (Темы, Бургер, Валидация) ---
 
-// Восстановление темы из localStorage
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
     document.body.classList.add("dark-theme");
 }
 
-// Переключение темы
 const themeToggle = document.getElementById("theme-toggle");
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
@@ -67,7 +60,6 @@ themeToggle.addEventListener("click", () => {
     localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
-// Логика бургер-меню
 const burgerBtn = document.getElementById("burger-btn");
 const nav = document.querySelector("nav");
 const navLinks = document.querySelectorAll("nav a");
@@ -84,7 +76,6 @@ navLinks.forEach(link => {
     });
 });
 
-// Кнопка «Показать больше»
 const toggleBtn = document.getElementById("toggle-btn");
 const extraInfo = document.getElementById("extra-info");
 
@@ -93,7 +84,6 @@ toggleBtn.addEventListener("click", () => {
     toggleBtn.textContent = extraInfo.classList.contains("expanded") ? "Скрыть" : "Показать больше";
 });
 
-// Логика валидации формы
 const form = document.getElementById("contact-form");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
