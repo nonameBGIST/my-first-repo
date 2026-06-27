@@ -3,10 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя первая страница</title>
+    <title>Портфолио веб-разработчика</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Ура, всё работает!</h1>
-    <p>Проверка расширения Live Server в VS Code.</p>
+
+    <header>
+        <h1>Иван Кашурников | Frontend Developer</h1>
+        <nav>
+            <a href="#about">Обо мне</a>
+            <a href="#projects">Проекты</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Секция 1: О себе -->
+        <section id="about">
+            <h2>О себе</h2>
+            <p>Привет! Я начинающий веб-разработчик. Изучаю семантическую вёрстку HTML5, работу со стилями CSS и базовый JavaScript для создания интерактивных сайтов.</p>
+        </section>
+
+        <!-- Секция 2: Проекты (минимум 2 article) -->
+        <section id="projects">
+            <h2>Проекты</h2>
+            
+            <article>
+                <h3>Проект 1: Сайт-визитка</h3>
+                <p>Разработка адаптивного одностраничного сайта для локального бизнеса с использованием современного HTML и CSS.</p>
+            </article>
+
+            <article>
+                <h3>Проект 2: Настройка рабочей среды</h3>
+                <p>Мой первый пет-проект, в рамках которого я полностью настроил VS Code, плагины для автоматизации и связал его с Git.</p>
+            </article>
+        </section>
+
+        <!-- Секция 3: Форма обратной связи -->
+        <section id="contact">
+            <h2>Связаться со мной</h2>
+            <form action="#">
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Иван Кашурников. Обновлено: <span id="update-date"></span></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
