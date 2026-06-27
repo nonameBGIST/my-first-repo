@@ -10,14 +10,10 @@
 
     <header>
         <h1>Иван Кашурников | Frontend Developer</h1>
-        
         <div class="header-controls">
-            <!-- Кнопка переключения темы (Этап 1) -->
             <button id="theme-toggle" aria-label="Переключить тему">🌓</button>
-            <!-- Кнопка-бургер для мобильной версии -->
             <button class="burger" id="burger-btn" aria-label="Открыть меню">☰</button>
         </div>
-        
         <nav>
             <a href="#about" class="active">Обо мне</a>
             <a href="#projects">Проекты</a>
@@ -30,35 +26,32 @@
         <section id="about">
             <h2>О себе</h2>
             <p>Привет! Я начинающий веб-разработчик. Изучаю семантическую вёрстку HTML5, работу со стилями CSS и базовый JavaScript для создания интерактивных сайтов.</p>
-            
             <div class="extra-info" id="extra-info">
                 <p>Дополнительный текст о себе, который раскрывается по клику. Здесь я могу подробнее рассказать о своих целях, стеке технологий и планах на дальнейшее обучение веб-разработке!</p>
             </div>
             <button id="toggle-btn">Показать больше</button>
         </section>
 
-        <!-- Секция 2: Проекты -->
+        <!-- Секция 2: Проекты (Этапы 1, 3, 4 из ПР №7) -->
         <section id="projects">
             <h2>Проекты</h2>
-            <div class="projects-grid">
-                <article>
-                    <h3>Проект 1: Сайт-визитка</h3>
-                    <p>Разработка адаптивного одностраничного сайта для локального бизнеса с использованием современного HTML и CSS.</p>
-                </article>
-
-                <article>
-                    <h3>Проект 2: Настройка рабочей среды</h3>
-                    <p>Мой первый пет-проект, в рамках которого я полностью настроил VS Code, плагины для автоматизации и связал его с Git.</p>
-                </article>
-                
-                <article>
-                    <h3>Проект 3: Адаптивная вёрстка</h3>
-                    <p>Применение Flexbox для построения гибких интерфейсов и динамического переключения тем оформления.</p>
-                </article>
+            
+            <!-- Инструменты поиска и фильтрации -->
+            <div class="projects-controls">
+                <div class="filters">
+                    <button data-filter="all" class="active">Все</button>
+                    <button data-filter="frontend">Frontend</button>
+                    <button data-filter="backend">Backend</button>
+                    <button data-filter="design">Дизайн</button>
+                </div>
+                <input type="text" id="search-input" placeholder="Поиск проекта...">
             </div>
+            
+            <!-- Пустой контейнер для динамической генерации карточек -->
+            <div class="projects-grid" id="projects-grid"></div>
         </section>
 
-        <!-- Секция 3: Форма обратной связи (Этап 3) -->
+        <!-- Секция 3: Форма обратной связи -->
         <section id="contact">
             <h2>Связаться со мной</h2>
             <form id="contact-form">

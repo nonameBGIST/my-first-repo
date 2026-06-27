@@ -106,7 +106,58 @@ nav a.active {
     cursor: pointer;
 }
 
-/* Сетка Grid и анимация карточек */
+/* --- ПР №7: Стили для кнопок-фильтров и инпута поиска --- */
+.projects-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filters {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filters button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.filters button:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.filters button.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+#search-input {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#search-input:focus {
+    border-color: var(--color-primary);
+}
+
+/* Сетка Grid и карточки проектов */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -119,12 +170,8 @@ nav a.active {
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    animation: fadeInUp 0.6s ease forwards;
-    opacity: 0;
+    animation: fadeInUp 0.4s ease forwards;
 }
-
-.projects-grid article:nth-child(2) { animation-delay: 0.15s; }
-.projects-grid article:nth-child(3) { animation-delay: 0.3s; }
 
 .projects-grid article:hover {
     transform: translateY(-6px);
@@ -132,7 +179,7 @@ nav a.active {
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -171,7 +218,6 @@ form button {
     cursor: pointer;
 }
 
-/* --- ПР №6: Тексты ошибок (Этап 3) --- */
 .error {
     display: block;
     color: #d33;
@@ -180,20 +226,27 @@ form button {
     margin-top: 2px;
 }
 
-/* --- ПР №6: Альтернативная палитра для тёмной темы (Этап 1) --- */
+/* Тёмная тема */
 body.dark-theme {
     background-color: #1a1a1a;
     color: #eaeaea;
 }
 
-body.dark-theme header {
-    background-color: #111;
-}
+body.dark-theme header { background-color: #111; }
 
 body.dark-theme .projects-grid article,
-body.dark-theme form {
+body.dark-theme form,
+body.dark-theme .filters button,
+body.dark-theme #search-input {
     background-color: #2a2a2a;
     color: #eaeaea;
+    border-color: #555;
+}
+
+body.dark-theme .filters button.active {
+    background-color: var(--color-accent);
+    color: #111;
+    border-color: var(--color-accent);
 }
 
 body.dark-theme form input, 
@@ -203,9 +256,7 @@ body.dark-theme form textarea {
     color: #fff;
 }
 
-body.dark-theme .extra-info p {
-    color: #bbb;
-}
+body.dark-theme .extra-info p { color: #bbb; }
 
 /* Адаптивность */
 .burger {
@@ -231,6 +282,14 @@ body.dark-theme .extra-info p {
     }
     body.dark-theme nav { background: #111; }
     nav.open { display: flex; }
+    
+    .projects-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #search-input {
+        max-width: 100%;
+    }
 }
 
 footer {
@@ -239,7 +298,4 @@ footer {
     background: #eaeaea;
     margin-top: 2rem;
 }
-body.dark-theme footer {
-    background: #111;
-    color: #888;
-}
+body.dark-theme footer { background: #111; color: #888; }
